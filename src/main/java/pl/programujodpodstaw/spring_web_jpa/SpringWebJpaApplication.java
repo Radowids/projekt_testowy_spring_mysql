@@ -9,6 +9,4 @@ public class SpringWebJpaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebJpaApplication.class, args);
 	}
-
-
 }

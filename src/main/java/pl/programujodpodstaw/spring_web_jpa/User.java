@@ -1,11 +1,10 @@
 package pl.programujodpodstaw.spring_web_jpa;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-@Entity
+import java.util.List;
+
+@Entity //oznaczenie klasy User jako encja
 public class User {
     @Id //ta adnotacja oznacza, że pierwszy okeśloby parametr (tu Integer id) będzie tzw. kluczem podstawowym (primary key)
     @GeneratedValue(strategy = GenerationType.IDENTITY)//ta adnotacja informuje Hibernate o sposobie generowania wartości dla pola oznaczonego @Id
@@ -15,6 +14,10 @@ public class User {
     private String login;
     private String displayName;
     private Integer yearOfBirth;
+
+//    Relacja jeden do wielu (one to many) (jeden user może mieć wiele postów przypisanych)
+    @OneToMany(mappedBy = "user")
+    List<Post> posts;
 
     public User() {
     }

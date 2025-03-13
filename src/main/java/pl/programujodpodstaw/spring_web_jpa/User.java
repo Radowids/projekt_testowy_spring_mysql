@@ -4,7 +4,8 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-@Entity //oznaczenie klasy User jako encja
+@Entity
+@Table(name = "users")//oznaczenie klasy User jako encja
 public class User {
     @Id //ta adnotacja oznacza, że pierwszy okeśloby parametr (tu Integer id) będzie tzw. kluczem podstawowym (primary key)
     @GeneratedValue(strategy = GenerationType.IDENTITY)//ta adnotacja informuje Hibernate o sposobie generowania wartości dla pola oznaczonego @Id

@@ -12,5 +12,11 @@ spring:
     password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
     hibernate:
       ddl-auto: create
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
